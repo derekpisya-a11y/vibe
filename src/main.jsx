@@ -117,7 +117,15 @@ function App() {
           <div className="orbital orbital-outer" aria-hidden="true" /><div className="orbital orbital-inner" aria-hidden="true" /><div className="orbital-core" aria-hidden="true" />
           <div className="scene-coordinate coordinate-top" aria-hidden="true">X: 0.781<br/>Y: 0.042</div>
           <div className="scene-plus plus-one" aria-hidden="true">+</div><div className="scene-plus plus-two" aria-hidden="true">+</div>
-          <div className="knife-float"><img className="knife-image" src="/assets/m9-knife.png" alt="Нож M9 Bayonet с фиолетовым переливающимся клинком" fetchPriority="high" /></div>
+          <div className="knife-float" role="img" aria-label="Нож M9 Bayonet с фиолетовым клинком; на обратной стороне надпись NEVERLOSE">
+            <div className="knife-spin">
+              <div className="knife-face knife-face-front"><img className="knife-image" src="/assets/m9-knife.png" alt="" fetchPriority="high" /></div>
+              <div className="knife-face knife-face-back">
+                <img className="knife-image" src="/assets/m9-knife.png" alt="" />
+                <span className="blade-signature" aria-hidden="true">NEVERLOSE</span>
+              </div>
+            </div>
+          </div>
           <div className="knife-label"><span className="knife-label-line"/><div><span className="knife-rarity">★ M9 BAYONET</span><span className="knife-finish">Doppler <span>/</span> Phase 2</span></div><span className="finish-swatch"/></div>
           <button className="motion-toggle" onClick={() => setKnifePaused(!knifePaused)} aria-pressed={knifePaused} aria-label={knifePaused ? 'Включить анимацию ножа' : 'Приостановить анимацию ножа'}><span className={`motion-indicator ${knifePaused ? 'is-paused' : ''}`} /><span>{knifePaused ? 'ANIMATION PAUSED' : 'DESIGNED TO STAND OUT'}</span></button>
         </div>
